@@ -1,0 +1,18 @@
+<h1>Roasts!</h1>
+
+<a href="/">Home</a>
+<a href="/sorted/">Sort by Votes</a>
+<a href="/boasts/">Boasts</a>
+<a href="">Roasts</a>
+<a href="/add-post/">Add Post</a>
+
+{% for post in roast_posts %}
+    <div style="border: solid black 1px; margin-bottom: 5px;">
+        <h3>{{ post.content }}</h3>
+        <h3>Roast</h3>
+        <h3>{{ post.count_votes }}</h3>
+        <a href="/upvote/{{post.id}}/">UPVOTE</a>
+        <a href="/downvote/{{post.id}}/">DOWNVOTE</a>
+        <h3>{{ post.post_date }}</h3>
+    </div>
+{% endfor %}

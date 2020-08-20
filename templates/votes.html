@@ -1,0 +1,22 @@
+<h1>Most Votes!</h1>
+
+<a href="/">Home</a>
+<a href="">Sort by Votes</a>
+<a href="/boasts/">Boasts</a>
+<a href="/roasts/">Roasts</a>
+<a href="/add-post/">Add Post</a>
+
+{% for post in votes %}
+    <div style="border: solid black 1px; margin-bottom: 5px;">
+        <h3>{{ post.content }}</h3>
+        {% if post.post_type == True %}
+            <h3>Boast</h3>
+        {% else %}
+            <h3>Roast</h3>
+        {% endif %}
+        <h3>{{ post.count_votes }}</h3>
+        <a href="/upvote/{{post.id}}/">UPVOTE</a>
+        <a href="/downvote/{{post.id}}/">DOWNVOTE</a>
+        <h3>{{ post.post_date }}</h3>
+    </div>
+{% endfor %}

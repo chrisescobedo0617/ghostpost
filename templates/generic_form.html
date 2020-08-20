@@ -1,0 +1,13 @@
+<h1>Add a Post!</h1>
+
+<a href="/">Home</a>
+<a href="/sorted/">Sort by Votes</a>
+<a href="/boasts/">Boasts</a>
+<a href="/roasts/">Roasts</a>
+<a href="">Add Post</a>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit!">
+</form>
